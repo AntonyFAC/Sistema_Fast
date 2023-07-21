@@ -3,8 +3,6 @@ from core import *
 # Create your views here.
 def home(request):
     return render(request, "core/home.html")
-def service(request):
-    return render(request, "core/service.html")
 def visit(request):
     return render(request, "core/visit.html")
 def blog(request):
