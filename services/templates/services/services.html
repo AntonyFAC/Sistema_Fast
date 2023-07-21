@@ -8,19 +8,16 @@
       <h3>{{service.title}}</h3>
     </div>
     <img
-      src="{% static  '/core/img/foond2-img.jpg' %}"
+      src="{% if service.image %}{{ service.image.url }}{% else %}{% static 'core/img/foond2-img.jpg' %}{% endif %}"
       class="card-img-top"
       alt="..."
     />
     <div class="card-body">
-      <p class="card-text">
-		{{service.content}}
-      </p>
+      <p class="card-text">{{service.content}}</p>
     </div>
     <div class="card-footer">
       <h6>Publicado: {{service.published |date:"SHORT_DATE_FORMAT"}}</h6>
     </div>
   </div>
 </div>
-{% endfor %}
-{% endblock %}
+{% endfor %} {% endblock %}
